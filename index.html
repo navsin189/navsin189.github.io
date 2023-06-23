@@ -18,6 +18,9 @@
         font-family: "Cormorant Garamond", serif;
         font-family: "Ysabeau Infant", sans-serif;
       }
+      body{
+        min-width: 300px;
+      }
 
       .topLayout {
         margin: 1% 12%;
@@ -83,7 +86,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: ;
+        /* align-items: ; */
       }
 
       .stackTools {
@@ -137,6 +140,28 @@
       .blog a {
         color: tomato;
         font-weight: bold;
+      }
+      @media only screen and (max-width: 1095px){
+        .devops,.lang,.webD,.other{
+          flex-direction: column;
+        }
+        .stackTools{
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+      }
+      @media only screen and (max-width: 710px){
+        .basicInfo{
+          flex-direction: column;
+        }
+      }
+      @media only screen and (max-width: 390px){
+        .img{
+          width: 90%;
+        }
+        .socialHandle{
+          flex-direction: column;
+        }
       }
     </style>
   </head>
