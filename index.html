@@ -32,12 +32,6 @@
             margin-left: 120px
         }
 
-        @media only screen and (max-width: 600px) {
-            #main {
-                margin-left: 0
-            }
-        }
-
         /* Card styling */
         .card {
             background-color: #333;
@@ -70,6 +64,17 @@
 
         .card-description {
             color: #ccc;
+        }
+        @media only screen and (max-width: 600px) {
+            #main {
+                margin-left: 0
+            }
+            .card img{
+                display: none;
+            }
+            #about p, .card-description{
+                text-align: left;
+            }
         }
     </style>
 </head>
