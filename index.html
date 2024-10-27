@@ -1,455 +1,295 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Ysabeau+Infant:ital,wght@1,1;1,200&display=swap"
-      rel="stylesheet"
-    />
 
-    <title>The DevOps guy</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naveen Singh - DevOps Engineer</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-      * {
-        box-sizing: border-box;
-        font-family: "Cormorant Garamond", serif;
-        font-family: "Ysabeau Infant", sans-serif;
-      }
-      body{
-        min-width: 300px;
-      }
-
-      .topLayout {
-        margin: 1% 12%;
-        padding: 0.5%;
-        /* border: 2px solid blue; */
-        box-shadow: 2px 2px 6px;
-      }
-
-      .basicInfo {
-        display: flex;
-        justify-content: space-between;
-        padding: 0 1%;
-        /* border: 2px solid red; */
-        align-items: center;
-      }
-
-      .greeting {
-        display: flex;
-        /* border: 2px solid black; */
-      }
-
-      .hello {
-        text-align: center;
-        vertical-align: middle;
-        writing-mode: vertical-lr;
-        /* border: 1px solid black; */
-        text-orientation: upright;
-        font-size: x-large;
-        font-weight: bold;
-        padding: 0 20px;
-        /* letter-spacing: 4px; */
-      }
-
-      .img {
-        border-radius: 50%;
-      }
-
-      .contactInfo {
-        /* border: 2px solid indigo; */
-        padding: 0 3%;
-      }
-
-      a {
-        text-decoration: none;
-        /* color: chartreuse; */
-      }
-
-      .info,
-      .tHeading,
-      .pHeading,
-      .bHeading {
-        text-align: center;
-      }
-
-      .tech,
-      .stackName {
-        margin: 0 5px;
-        font-weight: 600;
-        /* border: 1px solid; */
-      }
-
-      .tools {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        /* align-items: ; */
-      }
-
-      .stackTools {
-        display: flex;
-      }
-
-      .devops,
-      .lang,
-      .webD,
-      .other {
-        display: flex;
-        /* flex-direction: row; */
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 10px;
-      }
-
-      .socialHandle {
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        font-weight: bolder;
-      }
-
-      .projects,
-      .blogs {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        /* align-items: center; */
-      }
-
-      .project,
-      .blog {
-        width: 300px;
-        /* border: 0.5px dotted grey; */
-        padding: 0 5px 5px 5px;
-        margin: 10px 0.5%;
-        border-right: 1px solid lightslategray;
-        border-bottom: 1px solid lightslategray;
-      }
-
-      .pDescription,
-      .bDescription {
-        display: flex;
-        flex-direction: column;
-        text-align: justify;
-      }
-
-      .project a,
-      .blog a {
-        color: tomato;
-        font-weight: bold;
-      }
-      @media only screen and (max-width: 1095px){
-        .topLayout{
-          margin: 1% 2%;
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Montserrat", sans-serif
         }
-        .devops,.lang,.webD,.other{
-          flex-direction: column;
+
+        .w3-row-padding img {
+            margin-bottom: 12px
         }
-        .stackTools{
-          flex-wrap: wrap;
-          justify-content: center;
+
+        .w3-sidebar {
+            width: 120px;
+            background: #222;
         }
-      }
-      @media only screen and (max-width: 710px){
-        .basicInfo{
-          flex-direction: column;
-          margin-top:1%;
+
+        #main {
+            margin-left: 120px
         }
-      }
-      @media only screen and (max-width: 390px){
-        .img{
-          width: 90%;
+
+        @media only screen and (max-width: 600px) {
+            #main {
+                margin-left: 0
+            }
         }
-        .socialHandle{
-          flex-direction: column;
+
+        /* Card styling */
+        .card {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-      }
+
+        .card img {
+            border-radius: 8px;
+            width: 80px;
+            height: 80px;
+            margin-right: 15px;
+        }
+
+        .card-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1.2em;
+            color: #f44336;
+            margin-bottom: 5px;
+        }
+
+        .card-description {
+            color: #ccc;
+        }
     </style>
-  </head>
+</head>
 
-  <body>
-    <div class="topLayout" id="topLayout">
-      <div class="basicInfo" id="basicInfo">
-        <div class="greeting" id="greeting">
-          <div class="hello" id="hello">
-            <span class="text">hell🅾️</span>
-          </div>
-          <div class="abstractImage" id="abstractImage">
-            <img
-              src="https://www.w3schools.com/bootstrap4/img_avatar1.png"
-              alt="bearded guy"
-              width="200"
-              height="200"
-              class="img"
-              id="img"
-            />
-          </div>
+<body class="w3-black">
+
+    <!-- Sidebar -->
+    <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+        <a href="#home" class="w3-bar-item w3-button w3-padding-large w3-black">
+            <i class="fa fa-home w3-xxlarge"></i>
+            <p>HOME</p>
+        </a>
+        <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-user w3-xxlarge"></i>
+            <p>ABOUT</p>
+        </a>
+        <a href="#skills" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-code w3-xxlarge"></i>
+            <p>SKILLS</p>
+        </a>
+        <a href="#projects" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-briefcase w3-xxlarge"></i>
+            <p>PROJECTS</p>
+        </a>
+        <a href="#experience" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-suitcase w3-xxlarge"></i>
+            <p>EXPERIENCE</p>
+        </a>
+        <a href="#blogs" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-suitcase w3-xxlarge"></i>
+            <p>BLOGS</p>
+        </a>
+        <a href="#hobby" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-suitcase w3-xxlarge"></i>
+            <p>HOBBY</p>
+        </a>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="w3-padding-large" id="main">
+        <!-- Header/Home -->
+        <header class="w3-container w3-padding-32 w3-center" id="home">
+            <h1 class="w3-jumbo"><span class="w3-hide-small"></span> Naveen Singh</h1>
+            <p>DevOps Engineer | Cloud Infrastructure | Automation Enthusiast</p>
+            <!-- Profile Image -->
+            <img src="dp.jpg" alt="Your Profile Image" class="w3-image w3-circle" style="width:200px; height:200px;">
+        </header>
+
+        <!-- About Section -->
+        <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+            <h2 class="w3-text-light-grey">About Me</h2>
+            <hr style="width:200px" class="w3-opacity">
+            <p>
+                DevOps Engineer with nearly 4 years of hands-on experience in cloud infrastructure, automation, and team
+                leadership. Currently serving as the senior DevOps engineer, managing a large-scale GCP environment with
+                700+ VMs and driving performance optimizations across multiple tech stacks. Known for swift on-call
+                resolutions, mentoring junior engineers, and enhancing system reliability through automation and
+                containerization.
+            </p>
         </div>
-        <div class="contactInfo" id="contactInfo">
-          <h2 class="name" id="name">Naveen Singh</h2>
-          <h4 class="location" id="location">🚄 Kanpur, UP, India</h4>
-          <h4 class="cellNumber" id="cellNumber">☎️ +917379769520</h4>
-          <h4 class="mail" id="mail">
-            📧
-            <a href="mailto:navsin189@gmail.com" class="mail"
-              >navsin189@gmail.com</a
-            >
-          </h4>
-        </div>
-      </div>
-    </div>
-    <div class="topLayout" id="description">
-      <h4 class="info" id="info">
-        🅰️ Software Engineer who is interested in DevOps culture. I mostly work
-        with automation tools and Cloud-Native Technologies.
-      </h4>
-      <div class="socialHandle" id="socialHandle">
-        <div class="github" id="github">
-          <a href="https://github.com/navsin189" target="_blank">1️⃣ GitHub</a>
-        </div>
-        <div class="linkedin" id="linkedin">
-          <a href="https://linkedin.com/in/navsin189" target="_blank"
-            >2️⃣ LinkedIn</a
-          >
-        </div>
-        <div class="medium" id="medium">
-          <a href="https://sunnykkc13.medium.com" target="_blank">3️⃣ Medium</a>
-        </div>
-      </div>
-    </div>
-    <div class="topLayout" id="stack">
-      <h3 class="tHeading" id="tHeading">Tech Stack 📚</h3>
-      <div class="tools" id="tools">
-        <div class="devops" id="devops">
-          <div class="stackName">1️⃣ DevOps</div>
-          <div class="stackTools">
-            <div class="tech" id="ansible">🛎 Ansible</div>
-            <div class="tech" id="docker">🛎 Docker</div>
-            <div class="tech" id="git">🛎 Git</div>
-            <div class="tech" id="gcp">🛎 GCP</div>
-            <div class="tech" id="kafka">🛎 Kafka</div>
-            <div class="tech" id="k8s">🛎 Kubernetes</div>
-            <div class="tech" id="tf">🛎 Terraform</div>
-            <div class="tech" id="prometheus">🛎 Prometheus</div>
-            <div class="tech" id="zabbix">🛎 Zabbix</div>
-          </div>
-        </div>
-        <div class="lang" id="lang">
-          <div class="stackName">2️⃣ Languages</div>
-          <div class="stackTools">
-            <div class="tech" id="bash">🛎 Bash Scripting</div>
-            <div class="tech" id="python">🛎 Python</div>
-          </div>
-        </div>
-        <div class="webD" id="webD">
-          <div class="stackName">3️⃣ WebD</div>
-          <div class="stackTools">
-            <div class="tech" id="react">🛎 React Js</div>
-            <div class="tech" id="html">🛎 HTML5</div>
-            <div class="tech" id="css">🛎 CSS</div>
-          </div>
-        </div>
-        <div class="other" id="other">
-          <div class="stackName">4️⃣ Others</div>
-          <div class="stackTools">
-            <div class="tech" id="grafana">🛎 Grafana</div>
-            <div class="tech" id="jquery">🛎 JQuery</div>
-            <div class="tech" id="jenkins">🛎 Jenkins</div>
-            <div class="tech" id="vagrant">🛎 Vagrant</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="topLayout" id="project">
-      <h3 class="pHeading" id="pHeading">PROJECTS 📂</h3>
-      <div class="projects" id="projectLayout">
-        <div class="project" id="projectOne">
-          <h3 class="pTitle" id="pOneTitle">Kafka Cluster on AWS</h3>
-          <div class="pDescription" id="pOneDesc">
-            <span>🗒 Terraform modules created for Zookeeper and broker.</span>
-            <span>🗒 Updated zookeeper URI in Brokers’ properties.</span>
-            <span
-              >🗒 Provided Dockerfile for both and pushed images on docker
-              hub.</span
-            >
-          </div>
-          <div class="sc">
-            <a
-              href="https://github.com/navsin189/kafka-aws-cluster"
-              target="_blank"
-              >🖋 Source Code</a
-            >
-          </div>
-        </div>
-        <div class="project" id="projectOne">
-          <h3 class="pTitle" id="pOneTitle">WebApp Deployment on AWS</h3>
-          <div class="pDescription" id="pTwoDesc">
-            <span
-              >🗒 created infrastructure to deploy Django-React app with
-              PostgreSQL database on AWS.</span
-            >
-            <span
-              >🗒 wrote terraform modules for custom networking(VPC, subnets,
-              internet gateway, security groups), EC2 instance(with volumes),
-              AWS RDS(PostgreSQL) and S3 bucket(static web hosting).</span
-            >
-            <span>🗒 Python and Docker are installed through provisioning.</span>
-            <span
-              >🗒 Containerized Django webapp with Apache web server
-              configured.</span
-            >
-            <span
-              >🗒 Files and folders are also provisioned(uploaded to EC2 and
-              S3).</span
-            >
-          </div>
-          <div class="sc">
-            <a href="https://github.com/navsin189/kafka-aws-cluster" hidden
-              >🖋 Source Code</a
-            >
-          </div>
-        </div>
-        <div class="project" id="projectOne">
-          <h3 class="pTitle" id="pThreeTitle">
-            WebApp deployment through Kubernetes
-          </h3>
-          <div class="pDescription" id="pOneDesc">
-            <span
-              >🗒 generated a docker image, containerized the web application,
-              and published it to docker hub.</span
-            >
-            <span
-              >🗒 Vagrant was set up, and virtual machines were launched and
-              started.</span
-            >
-            <span
-              >🗒 a ansible playbook was written to provision these
-              machines.</span
-            >
-            <span
-              >🗒 Using the playbook, I installed the k3s (Kubernetes) server and
-              agent then deployed the master and worker nodes,
-              respectively.</span
-            ><span
-              >🗒 developed web application and postgres database deployments and
-              services.</span
-            >
-          </div>
-          <div class="sc">
-            <a
-              href="https://github.com/navsin189/vagrant-ansible-k3s"
-              target="_blank"
-              >🖋 Source Code</a
-            >
-          </div>
-        </div>
-        <div class="project" id="projectOne">
-          <h3 class="pTitle" id="pFourTitle">
-            Virtual Machines Migration and Automation
-          </h3>
-          <div class="pDescription" id="pOneDesc">
-            <span
-              >🗒 Launched and Configured virtual machines through Ansible.</span
-            >
-            <span>🗒 Network configuration through Terraform.</span>
-            <span>🗒 Automation was done via Python and Bash scripts.</span>
-            <span
-              >🗒 Responsible for managing DevOps tickets and monitoring the
-              production environment.</span
-            >
-            <span>🗒 Experience with Atlassian Jira and Confluence.</span>
-          </div>
-          <div class="sc">
-            <a
-              href="https://github.com/navsin189/kafka-aws-cluster"
-              target="_blank"
-              hidden
-              >🖋 Source Code</a
-            >
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="topLayout" id="blogs">
-      <h3 class="bHeading" id="bHeading">BLOGS 📑</h3>
-      <div class="blogs" id="blogLayout">
-        <div class="blog" id="blogOne">
-          <h3 class="bTitle" id="bOneTitle">
-            Why K8S removed support of Docker
-          </h3>
-          <div class="bDescription" id="bOneDesc">
-            <span>🗒 History of Kubernetes.</span>
-            <span>🗒 What is an OCI and runc ?</span>
-            <span>🗒 other CLI tool used to interact with CRI.</span>
-          </div>
-          <div class="sc">
-            <a
-              href="https://sunnykkc13.medium.com/why-k8s-removed-support-of-docker-51db94cd994a"
-              target="_blank"
-              >🖋 Link</a
-            >
-          </div>
-        </div>
-        <div class="blog" id="blogTwo">
-          <h3 class="bTitle" id="bTwoTitle">Introduction to Kafka</h3>
-          <div class="bDescription" id="bTwoDesc">
-            <span>🗒 What is Kafka?</span>
-            <span>🗒 Kafka Architecture</span>
-            <span>🗒 RabbitMQ vs. Kafka</span>
-          </div>
-          <div class="sc">
-            <a
-              href="https://sunnykkc13.medium.com/introduction-to-kafka-2f274f922c17"
-              target="_blank"
-              >🖋 Link</a
-            >
-          </div>
-        </div>
-        <div class="blog" id="blogThree">
-          <h3 class="bTitle" id="bThreeTitle">Terraform Modules</h3>
-          <div class="bDescription" id="bThreeDesc">
-            <span>🗒 What are terraform modules?</span>
-            <span>🗒 why use them, and how do you utilize them?</span>
-          </div>
-          <div class="sc">
-            <a
-              href="https://blog.devops.dev/terraform-modules-db392bb7e950"
-              target="_blank"
-              >🖋 Link</a
-            >
-          </div>
-        </div>
-        <div class="blog" id="blogFour">
-          <h3 class="bTitle" id="bFourTitle">Deep Dive into Kubernetes</h3>
-          <div class="bDescription" id="bFourDesc">
-            <span>🗒 Kubernetes Architecture.</span>
-            <span>🗒 Talked about master and worker node.</span>
-          </div>
-          <div class="sc">
-            <a
-              href="https://sunnykkc13.medium.com/deep-dive-into-kubernetes-238258c9a536"
-              target="_blank"
-              >🖋 Link</a
-            >
-          </div>
-        </div>
-        <div class="blog" id="blogFive">
-            <h3 class="bTitle" id="bFiveTitle">And many more</h3>
-            <div class="bDescription" id="bFiveDesc">
-                <span>🗒 on Linux, DevOps tools, Django</span>
+
+        <!-- Skills Section with Card Layout -->
+        <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="skills">
+            <h2 class="w3-text-light-grey">Skills</h2>
+            <hr style="width:200px" class="w3-opacity">
+
+            <div class="card">
+                <div class="card-content">
+                    <h3 class="card-title">Cloud & DevOps</h3>
+                    <p class="card-description">GCP, Terraform, Kubernetes, Argo Workflows, Docker, Ansible, Zabbix, Git
+                    </p>
+                </div>
             </div>
-            <div class="sc">
-              <a
-                href="https://sunnykkc13.medium.com/"
-                target="_blank"
-                >🖋 Link</a
-              >
+
+            <div class="card">
+                <div class="card-content">
+                    <h3 class="card-title">Languages</h3>
+                    <p class="card-description">Bash Scripting, Python</p>
+                </div>
             </div>
-          </div>
-      </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h3 class="card-title">Databases & Web Servers</h3>
+                    <p class="card-description">MariaDB, Apache, Nginx, Redis, HAProxy</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h3 class="card-title">Additional Tools</h3>
+                    <p class="card-description">Grafana, Prometheus, Jenkins, Kafka, Linux, Vagrant, Jira, Confluence
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects Section -->
+        <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="projects">
+            <h2 class="w3-text-light-grey">Projects</h2>
+            <hr style="width:200px" class="w3-opacity">
+
+            <!-- Project Card Example -->
+            <div class="card">
+                <img src="https://as2.ftcdn.net/v2/jpg/03/02/89/33/1000_F_302893333_DUSQXVlpzqgSuFHlA7BzB40dn3ZoNH6Q.jpg"
+                    alt="Project Image">
+                <div class="card-content">
+                    <h3 class="card-title">SEO Domain</h3>
+
+                    <p class="card-description">Led GCP operations with 700+ VMs, enhancing performance and resource
+                        utilization. Developed automated monitoring procedures, database partitioning with Argo
+                        Workflow, and optimized MySQL configurations to reduce query response times. Created Python
+                        scripts for automation, Ansible playbooks, and Terraform modules for resource management, while
+                        updating New Relic monitoring and implementing HaProxy. Improved disaster recovery and reduced
+                        downtime through effective on-call coordination and successfully migrated VMs from AWS to GCP.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://w7.pngwing.com/pngs/862/624/png-transparent-aws-vector-brand-logos-icon-thumbnail.png"
+                    alt="Project Image">
+                <div class="card-content">
+                    <h3 class="card-title">OneCommand Cloud</h3>
+                    <p class="card-description">Designed and implemented AWS infrastructure for deploying a Django-React
+                        application, utilizing Terraform modules for custom networking, EC2 instances, AWS RDS, and S3
+                        buckets. Provisioned and configured Apache and necessary dependencies for the Django
+                        application, and deployed HaProxy on the same EC2 instance to facilitate S3 connectivity without
+                        relying on static web hosting. Established a DNS solution using Route 53, integrating an Elastic
+                        Load Balancer (ELB) with SSL certificates. Additionally, configured Prometheus with Grafana for
+                        monitoring and employed GitHub Actions for seamless file uploads to S3.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://p1.hiclipart.com/preview/255/769/74/linux-logo-kubernetes-docker-software-deployment-vagrant-cloud-computing-computer-software-container-linux-by-coreos-png-clipart.jpg"
+                    alt="Project Image">
+                <div class="card-content">
+                    <h3 class="card-title">VagrantKube</h3>
+                    <p class="card-description">Created a Docker image to containerize a web application and published
+                        it to Docker Hub. Set up Vagrant to launch and manage virtual machines, and authored Ansible
+                        playbooks for configuration. Utilized these playbooks to install k3s (Kubernetes), deploying
+                        master and worker nodes, along with web application and PostgreSQL database deployments and
+                        services.
+
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Experience Section -->
+        <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="experience">
+            <h2 class="w3-text-light-grey">Experience</h2>
+            <hr style="width:200px" class="w3-opacity">
+
+            <!-- Experience Card Example -->
+            <div class="card">
+                <img src="https://www.mindfiresolutions.com/home-assets/images/logo.webp" alt="Company Logo">
+                <div class="card-content">
+                    <h3 class="card-title">Senior Software Engineer</h3>
+                    <ul>
+
+                        <li class="card-description">Collaborating with the collection team to gather essential data
+                            supporting their infrastructure and automation
+                            requirements.</li>
+                        <li class="card-description">Guided and mentored junior DevOps engineers and interns, ensuring
+                            best practices in infrastructure and
+                            deployment.</li>
+                        <li class="card-description">Implemented resource optimization strategies that cut GCP expenses
+                            by 8%.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://www.mindfiresolutions.com/home-assets/images/logo.webp" alt="Company Logo">
+                <div class="card-content">
+                    <h3 class="card-title">Software Engineer</h3>
+                    <ul>
+
+                        <li class="card-description">Maintained 95% first-call resolution rate on production issues,
+                            documenting solutions in Confluence and Jira for
+                            team reference.</li>
+                        <li class="card-description">Experience with New Relic and PagerDuty.</li>
+                        <li class="card-description">Migrated instances from AWS to GCP.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+            <h2 class="w3-text-light-grey">Contact Me</h2>
+            <hr style="width:200px" class="w3-opacity">
+            <p><i class="fa fa-linkedin fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> <a
+                    href="https://linkedin.com/in/navsin189" target="_blank" style="text-decoration: none;">LinkedIn</a>
+            </p>
+            <p><i class="fa fa-github fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> <a
+                    href="https://github.com/navsin189" target="_blank" style="text-decoration: none;">GitHub</a></p>
+
+            <p><i class="fa fa-medium fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> <a
+                    href="https://sunnykkc13.medium.com/" target="_blank" style="text-decoration: none;">Medium</a></p>
+            <p><i class="fa fa-file fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> <a
+                    href="https://drive.google.com/file/d/1uh4XjlAcVx3BQYhKWbLjSfn0lMu6pC2m/view?usp=sharing"
+                    target="_blank" style="text-decoration: none;">Resume</a></p>
+
+            <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Email: navsin189@gmail.com
+            </p>
+
+            <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Location: Kanpur, UP,
+                India
+            </p>
+        </div>
+
+        <!-- Footer -->
+        <footer class="w3-content w3-padding-64 w3-text-grey w3-center">
+            <p></p>
+        </footer>
     </div>
-  </body>
+
+</body>
+
 </html>
