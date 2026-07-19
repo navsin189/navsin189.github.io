@@ -1,0 +1,71 @@
+.sidebar{
+
+    position:sticky;
+
+    top:100px;
+
+    height:calc(100vh - 120px);
+
+    padding:30px;
+
+}
+
+.profile-card,
+.status-card,
+.social-card{
+
+    background:var(--bg-secondary);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius);
+
+    padding:25px;
+
+    margin-bottom:25px;
+
+}
+
+.profile-image{
+
+    width:180px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    overflow:hidden;
+
+}
+
+.profile-card h2{
+
+    margin-top:20px;
+
+    text-align:center;
+
+}
+
+.profile-card p{
+
+    text-align:center;
+
+    color:var(--grey);
+
+}
+
+.status-card p{
+
+    margin-top:10px;
+
+}
+
+.social-card{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}

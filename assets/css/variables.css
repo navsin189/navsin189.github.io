@@ -1,0 +1,34 @@
+:root{
+
+    /* Background */
+
+    --bg:#0d1117;
+    --bg-secondary:#161b22;
+    --card:#21262d;
+
+    /* Accent */
+
+    --blue:#58A6FF;
+    --purple:#BC8CFF;
+    --green:#3FB950;
+    --yellow:#D29922;
+    --red:#F85149;
+
+    /* Text */
+
+    --white:#F0F6FC;
+    --grey:#8B949E;
+
+    /* Border */
+
+    --border:#30363D;
+
+    /* Radius */
+
+    --radius:18px;
+
+    /* Shadow */
+
+    --shadow:0 10px 40px rgba(0,0,0,.35);
+
+}
