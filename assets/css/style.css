@@ -79,3 +79,51 @@ section{
     border-top:1px solid var(--border);
 
 }
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background-image:
+
+        linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
+
+        linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
+
+    background-size:50px 50px;
+
+    pointer-events:none;
+
+    z-index:-1;
+
+}
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    width:700px;
+
+    height:700px;
+
+    border-radius:50%;
+
+    background:radial-gradient(var(--blue),transparent 70%);
+
+    filter:blur(220px);
+
+    top:-300px;
+
+    right:-250px;
+
+    opacity:.18;
+
+    z-index:-2;
+
+}
