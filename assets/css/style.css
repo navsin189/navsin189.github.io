@@ -127,3 +127,8 @@ body::after{
     z-index:-2;
 
 }
+pre{
+
+    white-space:pre-wrap;
+
+}
