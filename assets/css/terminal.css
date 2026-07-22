@@ -177,3 +177,35 @@
     
 
 }
+
+.terminal-output{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:14px;
+
+}
+
+.output-icon{
+
+    color:var(--blue);
+
+    font-weight:bold;
+
+    user-select:none;
+
+    margin-top:2px;
+
+}
+
+.output-text{
+
+    color:inherit;
+
+    line-height:1.8;
+
+    flex:1;
+
+}

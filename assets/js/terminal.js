@@ -12,12 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             this.bindEvents();
 
-            this.print(`
-NaveenOS Terminal v2
-
-Type "help" to begin.
-
-`);
+            this.boot();
 
         }
 
@@ -74,9 +69,9 @@ Type "help" to begin.
         echo(command) {
 
             this.print(
-`naveen@NaveenOS:~$ ${command}`,
-"#58A6FF"
-);
+                `naveen@NaveenOS:~$ ${command}`,
+                "#58A6FF"
+            );
 
         }
 
@@ -87,14 +82,17 @@ Type "help" to begin.
             if (cmd === "clear") {
 
                 this.output.innerHTML = "";
+                this.boot();
 
                 return;
 
             }
 
-            if (commands[cmd]) {
+            const handler = registry.execute(cmd);
 
-                this.print(commands[cmd]());
+            if (handler) {
+
+                this.print(handler());
 
                 return;
 
@@ -102,13 +100,13 @@ Type "help" to begin.
 
             this.print(
 
-`Command not found.
+                `Command not found.
 
 Type "help" to see available commands.`,
 
-"#F85149"
+                "#F85149"
 
-);
+            );
 
         }
 
@@ -120,7 +118,11 @@ Type "help" to see available commands.`,
 
             div.style.color = color;
 
-            div.innerHTML = text.replace(/\n/g, "<br>");
+            div.innerHTML = `
+<div class="terminal-output">
+    <span class="output-icon">❯</span>
+    <div class="output-text">${text.trim().replace(/\n/g, "<br>")}</div>
+</div>`;;
 
             this.output.appendChild(div);
 
@@ -155,6 +157,16 @@ Type "help" to see available commands.`,
                 this.input.value = "";
 
             }
+
+        }
+        boot() {
+
+            this.print(`
+Welcome to NaveenOS Terminal v2
+
+Type "help" to begin.
+
+`);
 
         }
 

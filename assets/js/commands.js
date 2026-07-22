@@ -1,59 +1,26 @@
-const commands = {
+registry.register("help", () => [
+    "Available Commands",
+    "",
+    "help",
+    "whoami",
+    "coffee",
+    "clear"
+].join("\n"));
 
-    help() {
+registry.register("whoami", () => [
+    "Naveen Kumar Singh",
+    "",
+    "DevOps Engineer",
+    "",
+    "Professional YAML Archaeologist"
+].join("\n"));
 
-        return `
-Available Commands
-
-help
-whoami
-skills
-projects
-experience
-coffee
-clear
-`;
-
-    },
-
-    whoami() {
-
-        return `
-Naveen Kumar Singh
-
-DevOps Engineer
-
-Professional Firefighter
-(Production Only)
-`;
-
-    },
-
-    skills() {
-
-        return `
-AWS
-Docker
-Kubernetes
-Terraform
-Linux
-Python
-GitLab
-Grafana
-`;
-
-    },
-
-    coffee() {
-
-        return `
+registry.register("coffee", () => `
 Coffee Level
 
 ██████████
 
 100%
-`;
 
-    }
-
-};
+Ready for deployment ☕
+`);
