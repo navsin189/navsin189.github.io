@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="assets/css/terminal.css">
 </head>
 <script src="assets/js/main.js"></script>
+<script src="assets/js/commands.js"></script>
+<script src="assets/js/terminal.js"></script>
+
 <body>
 
     <!-- ================= NAVBAR ================= -->
@@ -18,17 +21,17 @@
 
         <ul class="nav-links">
 
-<li><a href="#hero">Home</a></li>
+            <li><a href="#hero">Home</a></li>
 
-<li><a href="#terminal">Terminal</a></li>
+            <li><a href="#terminal">Terminal</a></li>
 
-<li><a href="#timeline">Journey</a></li>
+            <li><a href="#timeline">Journey</a></li>
 
-<li><a href="#projects">Projects</a></li>
+            <li><a href="#projects">Projects</a></li>
 
-<li><a href="#contact">Contact</a></li>
+            <li><a href="#contact">Contact</a></li>
 
-</ul>
+        </ul>
 
     </nav>
 
@@ -55,7 +58,7 @@
                 <div class="profile-image">
 
                     <!-- <img src="assets/images/profile.png" alt="Profile"> -->
-                     <img src="https://placehold.co/180x180/png" alt="Profile">
+                    <img src="https://placehold.co/180x180/png" alt="Profile">
 
                 </div>
 
@@ -189,54 +192,43 @@
 
             <!-- Empty Sections -->
 
-            <section class="terminal" id="terminal">
+            <section id="terminal" class="terminal">
+
+                <div class="section-title">
+
+                    <span>// 01</span>
+
+                    <h2>Interactive Terminal</h2>
+
+                    <p>
+                        Because clicking buttons is overrated.
+                    </p>
+
+                </div>
 
                 <div class="terminal-window">
 
                     <div class="terminal-header">
 
                         <div class="terminal-buttons">
-
                             <span class="red"></span>
                             <span class="yellow"></span>
                             <span class="green"></span>
-
                         </div>
 
                         <p>NaveenOS Terminal</p>
 
                     </div>
 
-                    <div class="terminal-body">
+                    <div id="terminal-output"></div>
 
-                        <pre>
+                    <div class="terminal-input-line">
 
-$ whoami
+                        <span class="prompt">
+                            naveen@NaveenOS:~$
+                        </span>
 
-Naveen Kumar Singh
-
-DevOps Engineer
-Platform Builder
-Cloud Infrastructure Enthusiast
-
-$ status
-
-✔ Kubernetes Cluster Healthy
-✔ Coffee Level ........ 100%
-✔ Production .......... Surviving
-
-$ help
-
-whoami
-skills
-experience
-projects
-coffee
-clear
-
-$ <span class="cursor"></span>
-
-</pre>
+                        <input id="terminal-input" type="text" autocomplete="off" spellcheck="false" autofocus>
 
                     </div>
 
