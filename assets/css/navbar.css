@@ -65,3 +65,11 @@
     color:var(--white);
 
 }
+
+.nav-links a.active{
+
+color:var(--blue);
+
+font-weight:600;
+
+}
