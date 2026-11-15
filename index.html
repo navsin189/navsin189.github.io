@@ -1,254 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/navbar.css">
-    <link rel="stylesheet" href="assets/css/sidebar.css">
-    <link rel="stylesheet" href="assets/css/hero.css">
-    <link rel="stylesheet" href="assets/css/terminal.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Naveen Kumar Singh - DevOps Engineer, Platform Engineer and AWS Cloud Engineer">
+
+    <title>Naveen Kumar Singh | DevOps Engineer</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
-<script src="assets/js/main.js"></script>
-<script src="assets/js/registry.js"></script>
-<script src="assets/js/commands.js"></script>
-<script src="assets/js/terminal.js"></script>
 
 <body>
 
-    <!-- ================= NAVBAR ================= -->
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
 
-    <nav class="navbar">
+    <header class="menu-bar">
 
-        <div class="logo">
-            Naveen<span>OS</span>
-        </div>
+        <a href="#home" class="logo">
+            Naveen Singh
+        </a>
 
-        <ul class="nav-links">
+        <nav class="navs">
+            <a href="#home">Home</a>
+            <a href="#skills">Skills</a>
+            <a href="#work">Work</a>
+            <a href="#connect">Connect</a>
+        </nav>
 
-            <li><a href="#hero">Home</a></li>
+    </header>
 
-            <li><a href="#terminal">Terminal</a></li>
 
-            <li><a href="#timeline">Journey</a></li>
-
-            <li><a href="#projects">Projects</a></li>
-
-            <li><a href="#contact">Contact</a></li>
-
-        </ul>
-
-    </nav>
-
-    <!-- ================= MAIN ================= -->
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
 
     <main>
 
-        <!-- Sidebar -->
+        <!-- =========================
+             HOME / INTRO
+        ========================== -->
 
-        <aside class="sidebar">
+        <section id="home" class="hero">
 
-            <div class="identity-card">
+            <div class="intro">
 
-                <div class="identity-header">
+                <div class="position-wrapper">
 
-                    <h3>NaveenOS</h3>
+                    <span class="position-label">I am a</span>
 
-                    <span class="online">
-                        ● ONLINE
-                    </span>
-
-                </div>
-
-                <div class="profile-image">
-
-                    <img src="assets/images/urahara.png" alt="Profile">
-                    <!-- <img src="https://placehold.co/180x180/png" alt="Profile"> -->
+                    <h1 id="position" class="position">
+                        DevOps Engineer
+                    </h1>
 
                 </div>
 
-                <h2>Naveen Kumar Singh</h2>
 
-                <p class="designation">
-                    DevOps Engineer
-                </p>
+                <div class="summary">
 
-                <div class="skill-bars">
+                    <p>
+                        DevOps Engineer with <strong>5+ years of production experience</strong>
+                        focused on <strong>cloud infrastructure, container orchestration,
+                            infrastructure as code, CI/CD automation, observability,
+                            security engineering, and production reliability</strong>.
+                    </p>
 
-                    <div class="skill">
-                        <span>AWS</span>
-                        <div class="bar">
-                            <div style="width:95%"></div>
-                        </div>
-                    </div>
-
-                    <div class="skill">
-                        <span>Kubernetes</span>
-                        <div class="bar">
-                            <div style="width:92%"></div>
-                        </div>
-                    </div>
-
-                    <div class="skill">
-                        <span>Terraform</span>
-                        <div class="bar">
-                            <div style="width:88%"></div>
-                        </div>
-                    </div>
-
-                    <div class="skill">
-                        <span>Docker</span>
-                        <div class="bar">
-                            <div style="width:94%"></div>
-                        </div>
-                    </div>
-
-                    <div class="skill">
-                        <span>Linux</span>
-                        <div class="bar">
-                            <div style="width:97%"></div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="system-info">
-
-                    <p>Build : v5.0.1</p>
-
-                    <p>Region : ap-south-1</p>
-
-                    <p>Coffee : Available ☕</p>
+                    <p>
+                        Experienced in <strong>infrastructure automation, cloud platform
+                            modernization, workload and cost optimization, incident response,
+                            and building scalable engineering solutions</strong> across complex
+                        production environments.
+                    </p>
 
                 </div>
 
             </div>
 
-        </aside>
+        </section>
 
-        <!-- Right Side -->
 
-        <div class="content">
+        <!-- =========================
+             SKILLS
+        ========================== -->
 
-            <section class="hero" id="hero">
+        <section id="skills" class="section">
 
-                <div class="hero-left">
+            <div class="section-heading">
+                <h2>Skills under the Belt</h2>
+            </div>
 
-                    <p class="hero-tag">
-                        // Production survived another deployment.
-                    </p>
+            <div class="skills-container">
 
-                    <h1>
-                        I BREAK THINGS
-                        <br>
-                        SO PRODUCTION
-                        <br>
-                        DOESN'T.
-                    </h1>
+                <!-- Cloud -->
+                <span class="skill">AWS</span>
+                <span class="skill">EKS</span>
+                <span class="skill">EC2</span>
+                <span class="skill">S3</span>
+                <span class="skill">VPC</span>
+                <span class="skill">IAM</span>
+                <span class="skill">RDS</span>
+                <span class="skill">CloudWatch</span>
+                <span class="skill">MSK</span>
+                <span class="skill">OpenSearch</span>
+                <span class="skill">Route53</span>
+                <span class="skill">Bedrock</span>
 
-                    <p class="hero-description">
-                        DevOps Engineer • Platform Builder • Professional YAML Archaeologist
-                    </p>
+                <span class="skill">GCP</span>
+                <span class="skill">Compute Engine</span>
+                <span class="skill">Cloud Storage</span>
+                <span class="skill">BigQuery</span>
 
-                    <div class="hero-buttons">
+                <!-- Kubernetes / Containers -->
+                <span class="skill">Kubernetes</span>
+                <span class="skill">Karpenter</span>
+                <span class="skill">Rancher</span>
+                <span class="skill">Docker</span>
+                <span class="skill">Helm</span>
+                <span class="skill">Helmfile</span>
+                <span class="skill">Ingress</span>
 
-                        <button class="primary-btn">
-                            View Projects
-                        </button>
+                <!-- IaC -->
+                <span class="skill">Terraform</span>
+                <span class="skill">Ansible</span>
+                <span class="skill">Chef</span>
+                <span class="skill">CINC</span>
 
-                        <button class="secondary-btn">
-                            Download Resume
-                        </button>
+                <!-- CI/CD -->
+                <span class="skill">GitLab CI</span>
+                <span class="skill">Jenkins</span>
+                <span class="skill">Git</span>
+                <span class="skill">GitHub Actions</span>
 
+                <!-- Observability -->
+                <span class="skill">Prometheus</span>
+                <span class="skill">Grafana</span>
+                <span class="skill">Alertmanager</span>
+                <span class="skill">Grafana Alloy</span>
+                <span class="skill">Beyla</span>
+                <span class="skill">Pyroscope</span>
+                <span class="skill">YACE</span>
+                <span class="skill">Zabbix</span>
+
+                <!-- Security -->
+                <span class="skill">IRSA</span>
+                <span class="skill">HashiCorp Vault</span>
+                <span class="skill">IAM Policies</span>
+                <span class="skill">SFTP Hardening</span>
+
+                <!-- Programming / OS -->
+                <span class="skill">Python</span>
+                <span class="skill">Go</span>
+                <span class="skill">Bash</span>
+                <span class="skill">rpmbuild</span>
+                <span class="skill">Linux</span>
+                <span class="skill">RHEL</span>
+                <span class="skill">Rocky Linux</span>
+                <span class="skill">CentOS</span>
+                <span class="skill">Ubuntu</span>
+
+                <!-- Databases / Middleware -->
+                <span class="skill">MySQL</span>
+                <span class="skill">PostgreSQL</span>
+                <span class="skill">MSK Kafka</span>
+                <span class="skill">MariaDB</span>
+                <span class="skill">Consul</span>
+
+                <!-- Networking -->
+                <span class="skill">HTTP</span>
+                <span class="skill">HTTPS</span>
+                <span class="skill">TCP</span>
+                <span class="skill">TLS</span>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ACHIEVEMENTS / WORK
+        ========================== -->
+
+        <section id="work" class="section">
+
+            <div class="section-heading">
+                <h2>Achievement and Work I have done</h2>
+            </div>
+
+
+            <div class="work-container">
+
+                <!-- Card 1 -->
+                <article class="work-card">
+
+                    <div class="card-number">
+                        01
                     </div>
 
-                </div>
-
-                <div class="hero-right">
-
-                    <div class="sticky-note">
-
-                        <h3>Reminder</h3>
-
-                        <p>
-                            Never deploy on Friday.
-                            Unless you're updating your résumé.
-                        </p>
-
-                    </div>
-
-                    <div class="quick-stats">
-
-                        <div>
-                            <h2>700+</h2>
-                            <span>Servers</span>
-                        </div>
-
-                        <div>
-                            <h2>20GB → 1.6GB</h2>
-                            <span>Docker Diet</span>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-            <!-- Empty Sections -->
-
-            <section id="terminal" class="terminal">
-
-                <div class="section-title">
-
-                    <span>// 01</span>
-
-                    <h2>Interactive Terminal</h2>
+                    <h3>
+                        37% GPU Cost Reduction
+                    </h3>
 
                     <p>
-                        Because clicking buttons is overrated.
+                        Implemented NVIDIA GPU Time-Slicing for non-production
+                        workloads running on Amazon EKS.
                     </p>
 
-                </div>
-
-                <div class="terminal-window">
-
-                    <div class="terminal-header">
-
-                        <div class="terminal-buttons">
-                            <span class="red"></span>
-                            <span class="yellow"></span>
-                            <span class="green"></span>
-                        </div>
-
-                        <p>NaveenOS Terminal</p>
-
+                    <div class="card-tech">
+                        AWS &nbsp;·&nbsp; EKS &nbsp;·&nbsp; Kubernetes
                     </div>
 
-                    <div id="terminal-output"></div>
+                </article>
 
-                    <div class="terminal-input-line">
 
-                        <span class="prompt">
-                            naveen@NaveenOS:~$
-                        </span>
+                <!-- Card 2 -->
+                <article class="work-card">
 
-                        <input id="terminal-input" type="text" autocomplete="off" spellcheck="false" autofocus>
-
+                    <div class="card-number">
+                        02
                     </div>
 
-                </div>
+                    <h3>
+                        40% MTTR Reduction
+                    </h3>
 
-            </section>
+                    <p>
+                        Developed Python automation to analyze MySQL table partitions,
+        generate weekly operational reports, and consolidate data from
+        New Relic, PagerDuty, and Zabbix for faster production incident analysis. 
+                    </p>
 
-            <section class="timeline" id="timeline"></section>
+                    <div class="card-tech">
+                        Python &nbsp;·&nbsp; GCP &nbsp;·&nbsp; Automation
+                    </div>
 
-            <section class="toolbox" id="toolbox"></section>
+                </article>
 
-            <section class="metrics" id="metrics"></section>
 
-            <section class="projects" id="projects"></section>
+                <!-- Card 3 -->
+                <article class="work-card">
 
-            <section class="contact" id="contact"></section>
+                    <div class="card-number">
+                        03
+                    </div>
 
-        </div>
+                    <h3>
+                        9 EKS Clusters Modernized
+                    </h3>
+
+                    <p>
+                        Upgraded 9 EKS clusters from version 1.34 to 1.36
+                        alongside the Rancher platform upgrade from 2.11 to 2.15.
+                    </p>
+
+                    <div class="card-tech">
+                        EKS &nbsp;·&nbsp; Rancher &nbsp;·&nbsp; Terraform
+                    </div>
+
+                </article>
+
+
+                <!-- Card 4 -->
+                <article class="work-card">
+
+                    <div class="card-number">
+                        04
+                    </div>
+
+                    <h3>
+                        ~450 Production Nodes O.S. Migration
+                    </h3>
+
+                    <p>
+                        Developed Python modules to support Rocky Linux migration, validated
+        database packages, supported Python 2.7 → 3.8 migrations, and resolved
+        SSHd compatibility issues during the move to Rocky Linux 8.5+.
+                    </p>
+
+                    <div class="card-tech">
+                        Linux &nbsp;·&nbsp; Automation &nbsp;·&nbsp; Security
+                    </div>
+
+                </article>
+
+
+                <!-- Card 5 -->
+                <article class="work-card">
+
+                    <div class="card-number">
+                        05
+                    </div>
+
+                    <h3>
+                        20 GB → 1.6 GB
+                    </h3>
+
+                    <p>
+                        Removed unused DVC checkpoints from ML images,
+                        significantly reducing image footprint and storage usage.
+                    </p>
+
+                    <div class="card-tech">
+                        Kubernetes &nbsp;·&nbsp; Docker &nbsp;·&nbsp; ML
+                    </div>
+
+                </article>
+
+
+                <!-- Card 6 -->
+                <article class="work-card">
+
+                    <div class="card-number">
+                        06
+                    </div>
+
+                    <h3>
+                        Custom Go Prometheus Exporter
+                    </h3>
+
+                    <p>
+                        Engineered a concurrent Go-based exporter to overcome
+                        YACE limitations for AmazonMQ broker discovery through
+                        cross-account role assumption.
+                    </p>
+
+                    <div class="card-tech">
+                        Go &nbsp;·&nbsp; Prometheus &nbsp;·&nbsp; AWS
+                    </div>
+
+                </article>
+
+
+                <!-- Card 7 -->
+                <article class="work-card">
+
+                    <div class="card-number">
+                        07
+                    </div>
+
+                    <h3>
+                        AI-assisted Incident Remediation
+                    </h3>
+
+                    <p>
+                        Integrated Prometheus Alertmanager, n8n and AWS Bedrock
+                        to dynamically identify remediation steps from knowledge
+                        bases with team approval before execution.
+                    </p>
+
+                    <div class="card-tech">
+                        Bedrock &nbsp;·&nbsp; n8n &nbsp;·&nbsp; Prometheus
+                    </div>
+
+                </article>
+
+
+                <!-- Card 8 -->
+                <article class="work-card">
+
+                    <div class="card-number">
+                        08
+                    </div>
+
+                    <h3>
+                        Best Troubleshooter Award
+                    </h3>
+
+                    <p>
+                        Recognized in September 2024 for rapid root-cause
+                        isolation and incident turnaround under critical SLAs.
+                    </p>
+
+                    <div class="card-tech">
+                        Troubleshooting &nbsp;·&nbsp; Reliability
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CONNECT
+        ========================== -->
+
+        <section id="connect" class="section connect-section">
+
+            <div class="section-heading">
+                <h2>Let's connect</h2>
+            </div>
+
+
+            <div class="connect-container">
+
+                <a href="mailto:navsin189@gmail.com" class="connect-link">
+                    <span>Email</span>
+                    <span>↗</span>
+                </a>
+
+                <a href="https://linkedin.com/in/navsin189" target="_blank" rel="noopener noreferrer"
+                    class="connect-link">
+
+                    <span>LinkedIn</span>
+                    <span>↗</span>
+
+                </a>
+
+                <a href="https://github.com/navsin189" target="_blank" rel="noopener noreferrer" class="connect-link">
+
+                    <span>GitHub</span>
+                    <span>↗</span>
+
+                </a>
+
+                <a href="https://sunnykkc13.medium.com/" target="_blank" rel="noopener noreferrer" class="connect-link">
+
+                    <span>Medium</span>
+                    <span>↗</span>
+
+                </a>
+
+            </div>
+
+        </section>
 
     </main>
 
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="footer">
+
+        <span>© 2026 Naveen Singh</span>
+
+        <span>
+            Built with HTML & CSS
+        </span>
+
+    </footer>
+
+
+    <!-- =========================
+         POSITION ROTATION
+    ========================== -->
+
+    <script>
+
+        const positions = [
+            "DevOps Engineer",
+            "Platform Engineer",
+            "AWS Cloud Engineer"
+        ];
+
+        const positionElement = document.getElementById("position");
+
+        let currentPosition = 0;
+
+
+        function changePosition() {
+
+            /*
+             * Fade the current position out
+             */
+            positionElement.classList.add("fade-out");
+
+
+            /*
+             * Wait for the fade-out animation,
+             * change the text and fade it back in.
+             */
+            setTimeout(() => {
+
+                currentPosition =
+                    (currentPosition + 1) % positions.length;
+
+                positionElement.textContent =
+                    positions[currentPosition];
+
+                positionElement.classList.remove("fade-out");
+
+            }, 350);
+        }
+
+
+        /*
+         * Change position every 2 seconds.
+         */
+        setInterval(changePosition, 2000);
+
+    </script>
+
 </body>
+
+</html>
