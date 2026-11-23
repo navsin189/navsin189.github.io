@@ -642,7 +642,7 @@ main {
 ========================================================= */
 
 .blog-post {
-    max-width: 820px;
+    /* max-width: 100%; */
 
     padding: 80px 0 100px 0;
 }
@@ -721,11 +721,13 @@ main {
 
 
 .blog-content pre {
-    background-color: #111111;
+    /* background-color: ; */
 
-    color: #fafafa;
+    color: #111111;
 
     padding: 20px;
+
+    border: 1px solid black;
 
     border-radius: 10px;
 
