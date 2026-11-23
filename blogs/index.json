@@ -1,0 +1,10 @@
+{
+    "posts": [
+        {
+            "title": "API vs MCP vs AI Agents",
+            "date": "2025-01-15",
+            "filename": "mcp.md",
+            "description": "A comparison of traditional APIs, Model Context Protocol, and autonomous AI agents."
+        }
+    ]
+}

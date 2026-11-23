@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Blog Post | Naveen Kumar Singh</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Markdown Parser -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <header class="menu-bar">
+
+        <a href="index.html" class="logo">
+            Naveen Singh
+        </a>
+
+        <nav class="navs">
+            <a href="index.html">← Back</a>
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         BLOG POST
+    ========================== -->
+
+    <main>
+
+        <article class="blog-post">
+
+            <h1 id="blog-title"></h1>
+
+            <time id="blog-date" class="blog-date"></time>
+
+            <div id="blog-content" class="blog-content">
+                <p>Loading...</p>
+            </div>
+
+        </article>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="footer">
+
+        <span>© 2026 Naveen Singh</span>
+
+        <span>
+            Built with HTML & CSS
+        </span>
+
+    </footer>
+
+
+    <!-- =========================
+         BLOG POST LOADER
+    ========================== -->
+
+    <script>
+
+        (function loadBlogPost() {
+
+            var titleEl   = document.getElementById("blog-title");
+            var dateEl    = document.getElementById("blog-date");
+            var contentEl = document.getElementById("blog-content");
+
+            var params   = new URLSearchParams(window.location.search);
+            var postFile = params.get("post");
+
+            if (!postFile) {
+                showError("No blog post specified.");
+                return;
+            }
+
+            /*
+             * Fetch the manifest to get title and date,
+             * then fetch the markdown content.
+             */
+            fetch("blogs/index.json")
+                .then(function (res) {
+                    if (!res.ok) throw new Error("Manifest load failed");
+                    return res.json();
+                })
+                .then(function (data) {
+
+                    var posts = data.posts || [];
+
+                    var meta = posts.find(function (p) {
+                        return p.filename === postFile;
+                    });
+
+                    if (meta) {
+                        titleEl.textContent = meta.title;
+                        dateEl.textContent  = meta.date;
+                        document.title      = meta.title + " | Naveen Kumar Singh";
+                    } else {
+                        titleEl.textContent = postFile.replace(".md", "");
+                    }
+
+                    return fetch("blogs/" + postFile);
+                })
+                .then(function (res) {
+                    if (!res.ok) throw new Error("Markdown load failed");
+                    return res.text();
+                })
+                .then(function (markdown) {
+
+                    if (typeof marked !== "undefined" && marked.parse) {
+                        contentEl.innerHTML = marked.parse(markdown);
+                    } else {
+                        /* Fallback: show raw markdown if marked.js failed to load */
+                        contentEl.textContent = markdown;
+                    }
+                })
+                .catch(function () {
+                    showError("Unable to load this blog post.");
+                });
+
+
+            function showError(message) {
+                contentEl.innerHTML =
+                    '<p class="blog-error">' +
+                        message +
+                        ' <a href="index.html">Return to home</a>.' +
+                    '</p>';
+            }
+
+        })();
+
+    </script>
+
+</body>
+
+</html>

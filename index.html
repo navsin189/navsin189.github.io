@@ -33,7 +33,9 @@
         <nav class="navs">
             <a href="#home">Home</a>
             <a href="#skills">Skills</a>
+            <a href="#journey">Journey</a>
             <a href="#work">Work</a>
+            <a href="#blogs">Blogs</a>
             <a href="#connect">Connect</a>
         </nav>
 
@@ -70,19 +72,73 @@
                     <p>
                         DevOps Engineer with <strong>5+ years of production experience</strong>
                         focused on <strong>cloud infrastructure, container orchestration,
-                            infrastructure as code, CI/CD automation, observability,
-                            security engineering, and production reliability</strong>.
+                        infrastructure as code, CI/CD automation, observability,
+                        security engineering, and production reliability</strong>.
                     </p>
 
                     <p>
                         Experienced in <strong>infrastructure automation, cloud platform
-                            modernization, workload and cost optimization, incident response,
-                            and building scalable engineering solutions</strong> across complex
+                        modernization, workload and cost optimization, incident response,
+                        and building scalable engineering solutions</strong> across complex
                         production environments.
+                    </p>
+
+                    <!-- About Me Narrative -->
+
+                    <p>
+                        I believe reliable infrastructure is built through automation,
+                        observability, and a relentless focus on reducing toil. Every
+                        system I touch should be easier to operate tomorrow than it is
+                        today. What drives me is the challenge of turning fragile,
+                        manual processes into resilient, self-healing platforms that
+                        engineering teams can trust.
+                    </p>
+
+                    <p>
+                        When problems surface, I start with data — metrics, logs, and
+                        traces — before forming hypotheses. I value pragmatic solutions
+                        over perfect ones, shipping incremental improvements that compound
+                        over time. Collaboration across development, security, and
+                        operations teams is how I ensure the systems we build actually
+                        serve the people who depend on them.
                     </p>
 
                 </div>
 
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             IMPACT METRICS
+        ========================== -->
+
+        <section class="metrics-strip" aria-label="Key impact metrics">
+
+            <div class="metric" role="group" aria-label="37% GPU cost reduction">
+                <span class="metric-number">37%</span>
+                <span class="metric-label">GPU Cost Reduction</span>
+            </div>
+
+            <div class="metric" role="group" aria-label="40% mean time to resolution reduction">
+                <span class="metric-number">40%</span>
+                <span class="metric-label">MTTR Reduction</span>
+            </div>
+
+            <div class="metric" role="group" aria-label="15 EKS clusters modernized">
+                <span class="metric-number">15</span>
+                <span class="metric-label">EKS Clusters Modernized</span>
+            </div>
+
+            <div class="metric" role="group" aria-label="approximately 450 production nodes migrated">
+                <span class="metric-number">~450</span>
+                <span class="metric-label">Production Nodes Migrated</span>
+            </div>
+
+            <div class="metric" role="group" aria-label="92% container image size reduction">
+                <span class="metric-number">92%</span>
+                <span class="metric-label">Image Size Reduction</span>
             </div>
 
         </section>
@@ -186,13 +242,71 @@
 
 
         <!-- =========================
+             JOURNEY / TIMELINE
+        ========================== -->
+
+        <section id="journey" class="section">
+
+            <div class="section-heading">
+                <h2>Journey</h2>
+            </div>
+
+            <div class="timeline">
+
+                <!-- TODO: Replace placeholder companies and dates with your actual career history -->
+
+                <div class="timeline-entry">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-company">Company Name</h3>
+                        <span class="timeline-role">Senior DevOps Engineer</span>
+                        <span class="timeline-period">Jan 2023 – Present</span>
+                        <p class="timeline-desc">
+                            Leading cloud infrastructure and Kubernetes platform modernization across
+                            production environments, driving cost optimization and reliability improvements.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-entry">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-company">Company Name</h3>
+                        <span class="timeline-role">DevOps Engineer</span>
+                        <span class="timeline-period">Jun 2021 – Dec 2022</span>
+                        <p class="timeline-desc">
+                            Built CI/CD pipelines, managed AWS infrastructure with Terraform,
+                            and implemented observability solutions using Prometheus and Grafana.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-entry">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-company">Company Name</h3>
+                        <span class="timeline-role">Systems Engineer</span>
+                        <span class="timeline-period">Mar 2019 – May 2021</span>
+                        <p class="timeline-desc">
+                            Managed Linux server infrastructure, automated deployments with
+                            Ansible and Chef, and supported production database operations.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
              ACHIEVEMENTS / WORK
         ========================== -->
 
         <section id="work" class="section">
 
             <div class="section-heading">
-                <h2>Achievement and Work I have done</h2>
+                <h2>Achievements and Work</h2>
             </div>
 
 
@@ -201,18 +315,24 @@
                 <!-- Card 1 -->
                 <article class="work-card">
 
-                    <div class="card-number">
-                        01
+                    <div class="card-number">01</div>
+
+                    <h3>37% GPU Cost Reduction</h3>
+
+                    <div class="card-body">
+                        <div class="card-subsection">
+                            <strong class="subsection-heading">Problem</strong>
+                            <p>Non-production GPU workloads each required a dedicated instance, driving up infrastructure costs significantly.</p>
+                        </div>
+                        <div class="card-subsection">
+                            <strong class="subsection-heading">Approach</strong>
+                            <p>Implemented NVIDIA GPU Time-Slicing on Amazon EKS to run four virtual GPU workloads on a single instance using context switching.</p>
+                        </div>
+                        <div class="card-subsection">
+                            <strong class="subsection-heading">Result</strong>
+                            <p>Eliminated three redundant instances, achieving a 37% reduction in GPU infrastructure costs.</p>
+                        </div>
                     </div>
-
-                    <h3>
-                        37% GPU Cost Reduction
-                    </h3>
-
-                    <p>
-                        Implemented NVIDIA GPU Time-Slicing for non-production
-                        workloads running on Amazon EKS.
-                    </p>
 
                     <div class="card-tech">
                         AWS &nbsp;·&nbsp; EKS &nbsp;·&nbsp; Kubernetes
@@ -224,19 +344,24 @@
                 <!-- Card 2 -->
                 <article class="work-card">
 
-                    <div class="card-number">
-                        02
+                    <div class="card-number">02</div>
+
+                    <h3>40% MTTR Reduction</h3>
+
+                    <div class="card-body">
+                        <div class="card-subsection">
+                            <strong class="subsection-heading">Problem</strong>
+                            <p>Production incident analysis was slow due to fragmented monitoring data spread across multiple platforms.</p>
+                        </div>
+                        <div class="card-subsection">
+                            <strong class="subsection-heading">Approach</strong>
+                            <p>Developed Python automation to analyze MySQL table partitions, generate weekly operational reports, and consolidate data from New Relic, PagerDuty, and Zabbix.</p>
+                        </div>
+                        <div class="card-subsection">
+                            <strong class="subsection-heading">Result</strong>
+                            <p>Reduced mean time to resolution by 40% through faster and more unified incident analysis.</p>
+                        </div>
                     </div>
-
-                    <h3>
-                        40% MTTR Reduction
-                    </h3>
-
-                    <p>
-                        Developed Python automation to analyze MySQL table partitions,
-        generate weekly operational reports, and consolidate data from
-        New Relic, PagerDuty, and Zabbix for faster production incident analysis. 
-                    </p>
 
                     <div class="card-tech">
                         Python &nbsp;·&nbsp; GCP &nbsp;·&nbsp; Automation
@@ -248,18 +373,24 @@
                 <!-- Card 3 -->
                 <article class="work-card">
 
-                    <div class="card-number">
-                        03
+                    <div class="card-number">03</div>
+
+                    <h3>15 EKS Clusters Modernized</h3>
+
+                    <div class="card-body">
+                        <div class="card-subsection">
+                            <strong class="subsection-heading">Problem</strong>
+                            <p>Outdated Rancher and EKS versions blocked adoption of newer Kubernetes features and security patches.</p>
+                        </div>
+                        <div class="card-subsection">
+                            <strong class="subsection-heading">Approach</strong>
+                            <p>Upgraded Rancher from 2.11.3 to 2.15.2 and the rancher2 Terraform provider from 5.0.0 to 15.1.2. Baked new AMIs for Kubernetes 1.35 and 1.36, resolved all configuration drift, and ensured CGroupV2 and containerd 2.0+ compatibility.</p>
+                        </div>
+                        <div class="card-subsection">
+                            <strong class="subsection-heading">Result</strong>
+                            <p>Successfully modernized 15 EKS clusters to support EKS 1.36 with full compliance.</p>
+                        </div>
                     </div>
-
-                    <h3>
-                        9 EKS Clusters Modernized
-                    </h3>
-
-                    <p>
-                        Upgraded 9 EKS clusters from version 1.34 to 1.36
-                        alongside the Rancher platform upgrade from 2.11 to 2.15.
-                    </p>
 
                     <div class="card-tech">
                         EKS &nbsp;·&nbsp; Rancher &nbsp;·&nbsp; Terraform
@@ -271,19 +402,24 @@
                 <!-- Card 4 -->
                 <article class="work-card">
 
-                    <div class="card-number">
-                        04
+                    <div class="card-number">04</div>
+
+                    <h3>~450 Production Nodes O.S. Migration</h3>
+
+                    <div class="card-body">
+                        <div class="card-subsection">
+                            <strong class="subsection-heading">Problem</strong>
+                            <p>Legacy CentOS nodes required migration to Rocky Linux for continued security support and compliance.</p>
+                        </div>
+                        <div class="card-subsection">
+                            <strong class="subsection-heading">Approach</strong>
+                            <p>Developed Python modules to validate database packages, supported Python 2.7 to 3.8 migrations, and resolved SSHd compatibility issues during the transition to Rocky Linux 8.5+.</p>
+                        </div>
+                        <div class="card-subsection">
+                            <strong class="subsection-heading">Result</strong>
+                            <p>Migrated approximately 450 production nodes to Rocky Linux with zero unplanned downtime.</p>
+                        </div>
                     </div>
-
-                    <h3>
-                        ~450 Production Nodes O.S. Migration
-                    </h3>
-
-                    <p>
-                        Developed Python modules to support Rocky Linux migration, validated
-        database packages, supported Python 2.7 → 3.8 migrations, and resolved
-        SSHd compatibility issues during the move to Rocky Linux 8.5+.
-                    </p>
 
                     <div class="card-tech">
                         Linux &nbsp;·&nbsp; Automation &nbsp;·&nbsp; Security
@@ -295,18 +431,24 @@
                 <!-- Card 5 -->
                 <article class="work-card">
 
-                    <div class="card-number">
-                        05
+                    <div class="card-number">05</div>
+
+                    <h3>20 GB → 1.6 GB</h3>
+
+                    <div class="card-body">
+                        <div class="card-subsection">
+                            <strong class="subsection-heading">Problem</strong>
+                            <p>Oversized container images increased build times, storage costs, and deployment latency across multiple teams.</p>
+                        </div>
+                        <div class="card-subsection">
+                            <strong class="subsection-heading">Approach</strong>
+                            <p>Introduced multi-stage Dockerfiles for Node applications, replaced generic distro base images with purpose-built images such as Eclipse Temurin for Java, and removed unused DVC checkpoints from ML images.</p>
+                        </div>
+                        <div class="card-subsection">
+                            <strong class="subsection-heading">Result</strong>
+                            <p>Reduced total image footprint from 20 GB to 1.6 GB, significantly lowering storage usage and deployment times.</p>
+                        </div>
                     </div>
-
-                    <h3>
-                        20 GB → 1.6 GB
-                    </h3>
-
-                    <p>
-                        Removed unused DVC checkpoints from ML images,
-                        significantly reducing image footprint and storage usage.
-                    </p>
 
                     <div class="card-tech">
                         Kubernetes &nbsp;·&nbsp; Docker &nbsp;·&nbsp; ML
@@ -318,19 +460,24 @@
                 <!-- Card 6 -->
                 <article class="work-card">
 
-                    <div class="card-number">
-                        06
+                    <div class="card-number">06</div>
+
+                    <h3>Custom Go Prometheus Exporter</h3>
+
+                    <div class="card-body">
+                        <div class="card-subsection">
+                            <strong class="subsection-heading">Problem</strong>
+                            <p>YACE lacked support for AmazonMQ broker discovery through cross-account role assumption, leaving monitoring gaps.</p>
+                        </div>
+                        <div class="card-subsection">
+                            <strong class="subsection-heading">Approach</strong>
+                            <p>Engineered a concurrent Go-based Prometheus exporter that performs cross-account role assumption for AmazonMQ broker metric collection.</p>
+                        </div>
+                        <div class="card-subsection">
+                            <strong class="subsection-heading">Result</strong>
+                            <p>Achieved full AmazonMQ observability across accounts, addressing the open <a href="https://github.com/prometheus-community/yet-another-cloudwatch-exporter/issues/1552">YACE Issue #1552</a>.</p>
+                        </div>
                     </div>
-
-                    <h3>
-                        Custom Go Prometheus Exporter
-                    </h3>
-
-                    <p>
-                        Engineered a concurrent Go-based exporter to overcome
-                        YACE limitations for AmazonMQ broker discovery through
-                        cross-account role assumption.
-                    </p>
 
                     <div class="card-tech">
                         Go &nbsp;·&nbsp; Prometheus &nbsp;·&nbsp; AWS
@@ -342,19 +489,24 @@
                 <!-- Card 7 -->
                 <article class="work-card">
 
-                    <div class="card-number">
-                        07
+                    <div class="card-number">07</div>
+
+                    <h3>AI-assisted Incident Remediation</h3>
+
+                    <div class="card-body">
+                        <div class="card-subsection">
+                            <strong class="subsection-heading">Problem</strong>
+                            <p>Manual incident remediation was time-consuming, and knowledge bases were underutilized during high-pressure production events.</p>
+                        </div>
+                        <div class="card-subsection">
+                            <strong class="subsection-heading">Approach</strong>
+                            <p>Integrated Prometheus Alertmanager, n8n, and AWS Bedrock to dynamically retrieve remediation steps from knowledge bases, with team approval required before execution.</p>
+                        </div>
+                        <div class="card-subsection">
+                            <strong class="subsection-heading">Result</strong>
+                            <p>Established an AI-assisted remediation workflow that accelerates response times while maintaining human oversight.</p>
+                        </div>
                     </div>
-
-                    <h3>
-                        AI-assisted Incident Remediation
-                    </h3>
-
-                    <p>
-                        Integrated Prometheus Alertmanager, n8n and AWS Bedrock
-                        to dynamically identify remediation steps from knowledge
-                        bases with team approval before execution.
-                    </p>
 
                     <div class="card-tech">
                         Bedrock &nbsp;·&nbsp; n8n &nbsp;·&nbsp; Prometheus
@@ -366,18 +518,24 @@
                 <!-- Card 8 -->
                 <article class="work-card">
 
-                    <div class="card-number">
-                        08
+                    <div class="card-number">08</div>
+
+                    <h3>Best Troubleshooter Award</h3>
+
+                    <div class="card-body">
+                        <div class="card-subsection">
+                            <strong class="subsection-heading">Problem</strong>
+                            <p>Critical production incidents required rapid root-cause analysis under tight SLA constraints.</p>
+                        </div>
+                        <div class="card-subsection">
+                            <strong class="subsection-heading">Approach</strong>
+                            <p>Applied systematic debugging methods and deep infrastructure knowledge to isolate and resolve issues efficiently.</p>
+                        </div>
+                        <div class="card-subsection">
+                            <strong class="subsection-heading">Result</strong>
+                            <p>Recognized in September 2024 for exceptional troubleshooting speed and reliability under critical SLAs.</p>
+                        </div>
                     </div>
-
-                    <h3>
-                        Best Troubleshooter Award
-                    </h3>
-
-                    <p>
-                        Recognized in September 2024 for rapid root-cause
-                        isolation and incident turnaround under critical SLAs.
-                    </p>
 
                     <div class="card-tech">
                         Troubleshooting &nbsp;·&nbsp; Reliability
@@ -385,6 +543,23 @@
 
                 </article>
 
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             BLOGS
+        ========================== -->
+
+        <section id="blogs" class="section">
+
+            <div class="section-heading">
+                <h2>Blogs</h2>
+            </div>
+
+            <div id="blog-container" class="work-container">
+                <!-- Blog cards are injected by JavaScript -->
             </div>
 
         </section>
@@ -406,6 +581,13 @@
                 <a href="mailto:navsin189@gmail.com" class="connect-link">
                     <span>Email</span>
                     <span>↗</span>
+                </a>
+                <a href="https://drive.google.com/file/d/1pSJaTy5qX1i4LX2mOPTMvcUCwf10N-ra/view?usp=sharing"
+                    target="_blank" rel="noopener noreferrer" class="connect-link">
+
+                    <span>Resume</span>
+                    <span>↗</span>
+
                 </a>
 
                 <a href="https://linkedin.com/in/navsin189" target="_blank" rel="noopener noreferrer"
@@ -471,16 +653,8 @@
 
         function changePosition() {
 
-            /*
-             * Fade the current position out
-             */
             positionElement.classList.add("fade-out");
 
-
-            /*
-             * Wait for the fade-out animation,
-             * change the text and fade it back in.
-             */
             setTimeout(() => {
 
                 currentPosition =
@@ -494,11 +668,75 @@
             }, 350);
         }
 
-
-        /*
-         * Change position every 2 seconds.
-         */
         setInterval(changePosition, 2000);
+
+    </script>
+
+
+    <!-- =========================
+         BLOG LOADER
+    ========================== -->
+
+    <script>
+
+        (function loadBlogs() {
+
+            const container = document.getElementById("blog-container");
+
+            fetch("blogs/index.json")
+                .then(function (response) {
+                    if (!response.ok) {
+                        throw new Error("Failed to fetch manifest");
+                    }
+                    return response.json();
+                })
+                .then(function (data) {
+
+                    const posts = data.posts;
+
+                    if (!posts || posts.length === 0) {
+                        container.innerHTML =
+                            '<p class="blog-message">No blog posts available yet.</p>';
+                        return;
+                    }
+
+                    /* Sort by date descending (newest first) */
+                    posts.sort(function (a, b) {
+                        return new Date(b.date) - new Date(a.date);
+                    });
+
+                    posts.forEach(function (post, index) {
+
+                        var card = document.createElement("a");
+                        card.href = "blog.html?post=" + encodeURIComponent(post.filename);
+                        card.className = "work-card blog-card";
+
+                        card.innerHTML =
+                            '<div class="card-number">' +
+                                String(index + 1).padStart(2, "0") +
+                            '</div>' +
+                            '<h3>' + escapeHtml(post.title) + '</h3>' +
+                            '<p>' + escapeHtml(post.description) + '</p>' +
+                            '<div class="card-tech">' +
+                                escapeHtml(post.date) +
+                            '</div>';
+
+                        container.appendChild(card);
+                    });
+                })
+                .catch(function () {
+                    container.innerHTML =
+                        '<p class="blog-message">Blog posts are currently unavailable.</p>';
+                });
+
+
+            function escapeHtml(text) {
+                var div = document.createElement("div");
+                div.appendChild(document.createTextNode(text));
+                return div.innerHTML;
+            }
+
+        })();
 
     </script>
 
