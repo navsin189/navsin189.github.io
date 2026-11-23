@@ -56,7 +56,7 @@ Think of it as a backend API connected to your frontend application (the host �
 - MCP Clients → Created by the host, each client maintains a 1:1 connection with exactly one MCP server. It routes messages between the host and the server.
 - MCP Servers → Expose tools, resources, and prompts that LLMs can use. They operate independently and can be local processes or remote services.
 
-![MCP Architecture](mcp_architecture.svg)
+![MCP Architecture](blogs/mcp_architecture.svg)
 
 ### Examples
 - Rest API using FastAPI (so that you can correlate later with MCP server). Normally this is what we call backend.
