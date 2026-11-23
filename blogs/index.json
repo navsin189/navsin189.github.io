@@ -1,10 +1,10 @@
 {
     "posts": [
         {
-            "title": "API vs MCP vs AI Agents",
-            "date": "2025-01-15",
+            "title": "Building an AI Agent with MCP and a Local LLM",
+            "date": "2026-11-23",
             "filename": "mcp.md",
-            "description": "A comparison of traditional APIs, Model Context Protocol, and autonomous AI agents."
+            "description": "Step by step Building MCP server and AI Agent"
         }
     ]
 }
