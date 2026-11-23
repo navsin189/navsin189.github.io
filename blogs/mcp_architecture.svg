@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 370" font-family="'Segoe UI', system-ui, -apple-system, sans-serif" font-size="14">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#555"/>
+    </marker>
+    <marker id="arrow-back" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="10 0, 0 3.5, 10 7" fill="#999"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="820" height="370" rx="12" fill="#fdfdfd" stroke="#e0e0e0" stroke-width="1"/>
+
+  <!-- Title -->
+  <text x="410" y="35" text-anchor="middle" font-size="18" font-weight="600" fill="#222">MCP Architecture</text>
+
+  <!-- ===== HOST BOX ===== -->
+  <rect x="30" y="60" width="210" height="250" rx="10" fill="#e8f0fe" stroke="#4285f4" stroke-width="1.5" stroke-dasharray="6 3"/>
+  <text x="135" y="85" text-anchor="middle" font-size="13" font-weight="600" fill="#1a56db">HOST</text>
+  <text x="135" y="102" text-anchor="middle" font-size="11" fill="#5a7ab5">(Claude Desktop, Kiro, VS Code)</text>
+
+  <!-- LLM inside Host -->
+  <rect x="65" y="115" width="140" height="45" rx="8" fill="#fff" stroke="#4285f4" stroke-width="1.5"/>
+  <text x="135" y="138" text-anchor="middle" font-size="13" fill="#333">🧠 LLM</text>
+  <text x="135" y="153" text-anchor="middle" font-size="10" fill="#777">decides which tool to call</text>
+
+  <!-- Client 1 inside Host -->
+  <rect x="55" y="180" width="70" height="40" rx="6" fill="#fff" stroke="#4285f4" stroke-width="1.2"/>
+  <text x="90" y="204" text-anchor="middle" font-size="11" fill="#333">Client 1</text>
+
+  <!-- Client 2 inside Host -->
+  <rect x="145" y="180" width="70" height="40" rx="6" fill="#fff" stroke="#4285f4" stroke-width="1.2"/>
+  <text x="180" y="204" text-anchor="middle" font-size="11" fill="#333">Client 2</text>
+
+  <!-- 1:1 label -->
+  <text x="135" y="245" text-anchor="middle" font-size="10" fill="#888">each client ↔ exactly one server</text>
+  <text x="135" y="258" text-anchor="middle" font-size="10" fill="#888">(1 : 1 relationship)</text>
+
+  <!-- ===== SERVER 1 BOX ===== -->
+  <rect x="310" y="80" width="190" height="110" rx="10" fill="#e6f4ea" stroke="#34a853" stroke-width="1.5"/>
+  <text x="405" y="105" text-anchor="middle" font-size="13" font-weight="600" fill="#1e7e34">MCP Server 1</text>
+  <text x="405" y="122" text-anchor="middle" font-size="11" fill="#5a9e6f">(local process)</text>
+
+  <!-- Tools inside Server 1 -->
+  <rect x="325" y="135" width="75" height="30" rx="5" fill="#fff" stroke="#34a853" stroke-width="1"/>
+  <text x="362" y="154" text-anchor="middle" font-size="11" fill="#333">🔧 greeting</text>
+
+  <rect x="410" y="135" width="75" height="30" rx="5" fill="#fff" stroke="#34a853" stroke-width="1"/>
+  <text x="447" y="154" text-anchor="middle" font-size="11" fill="#333">🕐 time</text>
+
+  <!-- ===== SERVER 2 BOX ===== -->
+  <rect x="310" y="215" width="190" height="95" rx="10" fill="#e6f4ea" stroke="#34a853" stroke-width="1.5"/>
+  <text x="405" y="240" text-anchor="middle" font-size="13" font-weight="600" fill="#1e7e34">MCP Server 2</text>
+  <text x="405" y="257" text-anchor="middle" font-size="11" fill="#5a9e6f">(remote service)</text>
+
+  <!-- Tools inside Server 2 -->
+  <rect x="330" y="268" width="65" height="28" rx="5" fill="#fff" stroke="#34a853" stroke-width="1"/>
+  <text x="362" y="286" text-anchor="middle" font-size="11" fill="#333">🔍 search</text>
+
+  <rect x="405" y="268" width="80" height="28" rx="5" fill="#fff" stroke="#34a853" stroke-width="1"/>
+  <text x="445" y="286" text-anchor="middle" font-size="11" fill="#333">📝 create</text>
+
+  <!-- ===== EXTERNAL RESOURCES ===== -->
+  <rect x="580" y="95" width="200" height="75" rx="10" fill="#fef7e0" stroke="#f9ab00" stroke-width="1.5"/>
+  <text x="680" y="120" text-anchor="middle" font-size="13" font-weight="600" fill="#b06d00">External Resources</text>
+  <text x="680" y="140" text-anchor="middle" font-size="11" fill="#8a7340">Time API, Database,</text>
+  <text x="680" y="156" text-anchor="middle" font-size="11" fill="#8a7340">File System, etc.</text>
+
+  <rect x="580" y="230" width="200" height="60" rx="10" fill="#fef7e0" stroke="#f9ab00" stroke-width="1.5"/>
+  <text x="680" y="255" text-anchor="middle" font-size="13" font-weight="600" fill="#b06d00">External APIs</text>
+  <text x="680" y="275" text-anchor="middle" font-size="11" fill="#8a7340">JIRA, DuckDuckGo, etc.</text>
+
+  <!-- ===== ARROWS ===== -->
+  <!-- LLM to Clients -->
+  <line x1="105" y1="160" x2="92" y2="180" stroke="#4285f4" stroke-width="1.2" marker-end="url(#arrow)"/>
+  <line x1="165" y1="160" x2="178" y2="180" stroke="#4285f4" stroke-width="1.2" marker-end="url(#arrow)"/>
+
+  <!-- Client 1 to Server 1 -->
+  <line x1="125" y1="195" x2="308" y2="140" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Client 2 to Server 2 -->
+  <line x1="215" y1="205" x2="308" y2="255" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Server 1 to Resource -->
+  <line x1="500" y1="135" x2="578" y2="130" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Server 2 to External APIs -->
+  <line x1="500" y1="265" x2="578" y2="260" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Legend -->
+  <text x="410" y="350" text-anchor="middle" font-size="11" fill="#999">Host creates one Client per Server · Servers expose Tools, Resources, and Prompts · Servers connect to External Resources</text>
+</svg>

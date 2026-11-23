@@ -48,19 +48,22 @@ async function getDateTime() {
 
 // <button onClick="getDateTime().then(dt => alert(dt))">Get IST time</button>
 ```
-APIs work on HTTP, HTTPS, and TCP protocol.
-But LLMs don't speak HTTP — they need a standard way to discover and call tools at runtime. To solve this, a new protocol was created — **Model Context Protocol**. [MCP](https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro) allows LLMs to use these custom functions/methods/classes written in high level languages such as Python, Go, and so on. It is an open-source standard for connecting AI applications to external systems.
-Think of it as a backend API connected to your frontend application (LLMs).
+APIs typically communicate over HTTP/HTTPS.
+But LLMs are stateless models — they don't speak any protocol. The applications hosting them need a standard way to discover and call tools at runtime. To solve this, a new protocol was created — **Model Context Protocol**. [MCP](https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro) allows LLMs to use these custom functions/methods/classes written in high level languages such as Python, Go, and so on. It is an open-source standard for connecting AI applications to external systems.
+Think of it as a backend API connected to your frontend application (the host — Claude Desktop, Kiro, etc.), where the LLM is the brain deciding which tool to call.
 
-- MCP Servers → Provide APIs, database access to LLMs
-- MCP Clients → Host applications (Claude Desktop, Kiro, your Python script) that connect LLMs to MCP servers
+- MCP Hosts → The application the user interacts with (Claude Desktop, Kiro, Codex, VS Code). It creates and manages MCP clients, enforces security policies, and coordinates the LLM.
+- MCP Clients → Created by the host, each client maintains a 1:1 connection with exactly one MCP server. It routes messages between the host and the server.
+- MCP Servers → Expose tools, resources, and prompts that LLMs can use. They operate independently and can be local processes or remote services.
+
+![MCP Architecture](mcp_architecture.svg)
 
 ### Examples
 - Rest API using FastAPI (so that you can correlate later with MCP server). Normally this is what we call backend.
 ```python
 
 from fastapi import FastAPI
-import requests
+import httpx
 
 app = FastAPI()
 
@@ -71,8 +74,9 @@ async def greetings():
 
 @app.get("/time")
 async def time(timezone="Asia/Kolkata"):
-    response = requests.get(f"https://time.now/developer/api/time?timezone={timezone}")
-    return response.json()["datetime"]
+    async with httpx.AsyncClient() as client:
+        response = await client.get(f"https://time.now/developer/api/time?timezone={timezone}")
+        return response.json()["datetime"]
 
 # On Terminal
 >  uv run fastapi dev
@@ -86,13 +90,15 @@ Prerequisites
 - Install uv or pip
 - Install Node.js (provides node, npm and npx commands)
 - Make sure each of these commands are available in your terminal. If not, check your $PATH variable
-```python
+```bash
 > uv add "mcp[cli]"
+```
 
+```python
 # server_mcp.py
 
 from mcp.server import MCPServer
-import requests
+import httpx
 
 mcp = MCPServer("Demo")
 
@@ -102,11 +108,14 @@ def greeting(name: str) -> str:
     return f"Hello, {name}!"
 
 @mcp.tool()
-async def time(timezone="Asia/Kolkata"):
-    response = requests.get(f"https://time.now/developer/api/time?timezone={timezone}")
-    return response.json()["datetime"]
+async def time(timezone: str = "Asia/Kolkata"):
+    """Get current date/time for a timezone."""
+    async with httpx.AsyncClient() as client:
+        response = await client.get(f"https://time.now/developer/api/time?timezone={timezone}")
+        return response.json()["datetime"]
+```
 
-
+```bash
 > uv run mcp dev server_mcp.py
 ```
 - Here tools mean the objects a LLM can call on runtime based on requirement.
@@ -127,7 +136,7 @@ async def time(timezone="Asia/Kolkata"):
 ```
 - The above JSON is for IDEs and Claude Desktop. To use this MCP server via a Python script, run the below command.
 - To use it via [HTTP](https://py.sdk.modelcontextprotocol.io/client/) run `uv run mcp run --transport streamable-http server_mcp.py`
-```
+```bash
 > uv run mcp run --transport streamable-http server_mcp.py
 INFO:     Started server process [91714]
 INFO:     Waiting for application startup.
@@ -173,7 +182,7 @@ None
 ```python
 #### server_mcp.py ####
 from mcp.server import MCPServer
-import requests
+import httpx
 
 mcp = MCPServer(
     "Demo",
@@ -188,10 +197,11 @@ def greeting(name: str) -> str:
     return f"Hello, {name}!"
 
 @mcp.tool()
-async def time(timezone="Asia/Kolkata"):
+async def time(timezone: str = "Asia/Kolkata"):
     """It takes timezone as a input and get the date and time from time.now api. Then returns the Datetime"""
-    response = requests.get(f"https://time.now/developer/api/time?timezone={timezone}")
-    return response.json()["datetime"]
+    async with httpx.AsyncClient() as client:
+        response = await client.get(f"https://time.now/developer/api/time?timezone={timezone}")
+        return response.json()["datetime"]
 
 
 #### client_mcp.py ####
@@ -222,7 +232,7 @@ if __name__ == "__main__":
 ```
 - Checkout how you can call tools from client_mcp.py [here](https://py.sdk.modelcontextprotocol.io/client/#calling-a-tool)
 
-> Now we understood how MCP works. Let's provide the tools to LLM
+**Now we understood how MCP works. Let's provide the tools to LLM.**
 
 #### LLM With MCP
 
@@ -234,6 +244,8 @@ MODEL = "granite4.2:3b"  # Make sure this matches `ollama list`
 NUM_CTX = 32768         # Important: accessibility snapshots can be large
 ```
 - NUM_CTX: It means context size. Each model has its own context size, granite4.2:3b has 128k. But we should remember what context actually stores. It stores user prompt, system prompt and the output it has given. If each message is fresh, meaning it has no correlation with the previous messages, then we should be good. Otherwise you need to make sure how context is getting handled and cleared.
+
+**NOTE:** The agent code below uses `ClientSession` and `stdio_client` from the v1 SDK to show what happens behind the scenes — the raw transport setup, the manual initialization handshake, and the explicit read/write streams. For production use, prefer `Client` from v2 (`from mcp import Client`) which wraps all of this in a single object. `ClientSession` is deprecated in v2.
 
 **Steps**
 1. Connect to LLM from Python Script
@@ -272,7 +284,7 @@ if __name__ == "__main__":
 
 **ClientSession:** This is a class that handles sessions in v1. In v2, the Client class (client_mcp.py) replaces ClientSession for most use cases — it handles the transport setup and initialization in one step.
 
-> Provide tools to Ollama
+##### Provide tools to Ollama
 ```python
 
 def mcp_tools_to_ollama(mcp_tools) -> list[dict]:
@@ -301,7 +313,7 @@ async def main():
 ```
 - As we discussed, an LLM needs three things from a tool: name, description and input schema.
 
-> Call Ollama
+##### Call Ollama
 ```python
 
 import httpx # You can use ollama python module too
@@ -320,7 +332,7 @@ async def call_ollama(messages: list[dict], tools: list[dict]) -> dict:
 
 ```
 
-> Define System Prompt and Take User Prompt
+##### Define System Prompt and Take User Prompt
 ```python
 
 # ---------------------------------------------------------------------------
@@ -402,9 +414,11 @@ async def main():
 - Currently the LLM has been capped to run only 5 tool-call rounds. After 5 it will stop. Similar to timeouts.
 - *assistant_msg* is the response object after providing tools to the LLM.
 - We are also checking whether it called any tools or not. If yes, print the name and parameters passed.
-- Finally, we ask the LLM again to summarize by sending the whole message history, since LLMs do not remember what we have talked about. That's why context size matters.
+- Finally, we ask the LLM again to summarize by sending the whole message history if steps went more than threshold, since LLMs do not remember what we have talked about. That's why context size matters.
 
-> Output
+**How one round actually plays out:** Say you type "What is the current time in California?" — the LLM receives your prompt along with the list of available tools (greeting and time). It looks at the tool descriptions and decides: this is a time question, so I should call the `time` tool with `{"timezone": "America/Los_Angeles"}`. The agent code catches that tool call, sends it to the MCP server via `session.call_tool()`, and the server executes the actual HTTP request to the time API. The result (`2026-11-23T04:27:22...`) comes back through MCP to the agent, which appends it to the message history as a tool result. Now the LLM is called again — this time it sees the raw timestamp in its context and knows it doesn't need another tool call. It formats a human-friendly answer: "The current time in California is 4:27 AM on November 23, 2026." That's one complete round. The loop exists because some questions need multiple tool calls before the LLM has enough information to answer.
+
+##### Output
 - General Question
 ```bash
 > uv run agent.py
@@ -432,7 +446,7 @@ Assistant: The current time in California (Los Angeles) is **4:27:22 AM on Novem
 
 The complete `agent.py` is available on GitHub: https://github.com/navsin189/superintelligence/tree/main
 
-> You can use opensource mcp servers too
+##### You can use open-source MCP servers too
 ```python
 server_params = StdioServerParameters(
         command="uvx",
@@ -447,3 +461,7 @@ This was a minimal agent — one server, two tools, a local LLM. From here you c
 - Add memory/conversation history so the agent remembers previous messages
 - Swap in a larger model for better tool-calling accuracy
 - Try connecting your server to Claude Desktop or Kiro instead of a custom client
+
+#### References
+- [modelcontextprotocol.io](https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro)
+- [MCP Python SDK](https://py.sdk.modelcontextprotocol.io/)

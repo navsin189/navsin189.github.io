@@ -3,7 +3,7 @@
         {
             "title": "Building an AI Agent with MCP and a Local LLM",
             "date": "2026-11-23",
-            "filename": "mcp.md",
+            "filename": "building_ai_agent.md",
             "description": "Step by step Building MCP server and AI Agent"
         }
     ]
