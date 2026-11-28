@@ -5,6 +5,12 @@
             "date": "2026-11-23",
             "filename": "building_ai_agent.md",
             "description": "Step by step Building MCP server and AI Agent"
+        },
+        {
+            "title": "What Happens After You Hit Enter on a LLM?",
+            "date": "2026-11-28",
+            "filename": "how_llm_works.md",
+            "description": "Tracing a prompt through tokenization, embeddings, self-attention, and sampling — a DevOps engineer's notes on understanding LLM internals."
         }
     ]
 }

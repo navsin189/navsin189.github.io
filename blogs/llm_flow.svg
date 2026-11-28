@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 1020" font-family="'Segoe UI', system-ui, -apple-system, sans-serif" font-size="13">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#555"/>
+    </marker>
+    <marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4285f4"/>
+    </marker>
+    <marker id="arrow-loop" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e65100"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="720" height="1020" rx="12" fill="#fdfdfd" stroke="#e0e0e0" stroke-width="1"/>
+
+  <!-- Title -->
+  <text x="360" y="35" text-anchor="middle" font-size="18" font-weight="600" fill="#222">LLM Flow: From Prompt to Output</text>
+
+  <!-- ===== PREFILL PHASE ===== -->
+  <rect x="145" y="50" width="430" height="460" rx="12" fill="none" stroke="#4285f4" stroke-width="1.5" stroke-dasharray="8 4"/>
+  <text x="560" y="72" font-size="14" font-weight="600" fill="#4285f4">PREFILL</text>
+
+  <!-- 1. Prompt Input -->
+  <rect x="210" y="75" width="300" height="55" rx="8" fill="#e8f0fe" stroke="#4285f4" stroke-width="1.5"/>
+  <text x="360" y="98" text-anchor="middle" font-size="14" font-weight="600" fill="#1a56db">📝 Prompt Input</text>
+  <text x="360" y="118" text-anchor="middle" font-size="11" fill="#5a7ab5">System Prompt + User Prompt</text>
+
+  <!-- Arrow -->
+  <line x1="360" y1="130" x2="360" y2="155" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 2. Tokenization -->
+  <rect x="210" y="158" width="300" height="55" rx="8" fill="#fff" stroke="#555" stroke-width="1.2"/>
+  <text x="360" y="181" text-anchor="middle" font-size="14" font-weight="600" fill="#333">🔤 Tokenization (BPE)</text>
+  <text x="360" y="201" text-anchor="middle" font-size="11" fill="#777">"Kubernetes" → ["K", "ubernetes"] → [42, 30927]</text>
+
+  <!-- Arrow -->
+  <line x1="360" y1="213" x2="360" y2="238" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 3. Embedding Lookup -->
+  <rect x="210" y="241" width="300" height="55" rx="8" fill="#fff" stroke="#555" stroke-width="1.2"/>
+  <text x="360" y="264" text-anchor="middle" font-size="14" font-weight="600" fill="#333">📊 Embedding Lookup</text>
+  <text x="360" y="284" text-anchor="middle" font-size="11" fill="#777">Token ID → 2560-dim vector from embedding matrix</text>
+
+  <!-- Arrow -->
+  <line x1="360" y1="296" x2="360" y2="321" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 4. Positional Encoding -->
+  <rect x="210" y="324" width="300" height="55" rx="8" fill="#fff" stroke="#555" stroke-width="1.2"/>
+  <text x="360" y="347" text-anchor="middle" font-size="14" font-weight="600" fill="#333">📍 Positional Encoding (RoPE)</text>
+  <text x="360" y="367" text-anchor="middle" font-size="11" fill="#777">Adds word order to each embedding</text>
+
+  <!-- Arrow -->
+  <line x1="360" y1="379" x2="360" y2="404" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 5. Transformer Layers -->
+  <rect x="195" y="407" width="330" height="90" rx="8" fill="#e6f4ea" stroke="#34a853" stroke-width="1.5"/>
+  <text x="360" y="430" text-anchor="middle" font-size="14" font-weight="600" fill="#1e7e34">🧠 Transformer Layer  ×40</text>
+
+  <!-- Self-Attention sub-box -->
+  <rect x="210" y="440" width="145" height="40" rx="6" fill="#fff" stroke="#34a853" stroke-width="1"/>
+  <text x="282" y="457" text-anchor="middle" font-size="11" font-weight="500" fill="#333">Self-Attention</text>
+  <text x="282" y="472" text-anchor="middle" font-size="10" fill="#777">Q × K → weights → V</text>
+
+  <!-- Arrow between sub-boxes -->
+  <line x1="358" y1="460" x2="373" y2="460" stroke="#555" stroke-width="1" marker-end="url(#arrow)"/>
+
+  <!-- FFN sub-box -->
+  <rect x="376" y="440" width="135" height="40" rx="6" fill="#fff" stroke="#34a853" stroke-width="1"/>
+  <text x="443" y="457" text-anchor="middle" font-size="11" font-weight="500" fill="#333">Feed Forward</text>
+  <text x="443" y="472" text-anchor="middle" font-size="10" fill="#777">Network (FFN)</text>
+
+  <!-- ===== DECODE PHASE ===== -->
+  <rect x="145" y="520" width="430" height="395" rx="12" fill="none" stroke="#e65100" stroke-width="1.5" stroke-dasharray="8 4"/>
+  <text x="560" y="542" font-size="14" font-weight="600" fill="#e65100">DECODE</text>
+
+  <!-- Arrow from Transformer to Logits -->
+  <line x1="360" y1="497" x2="360" y2="545" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 6. Logits -->
+  <rect x="210" y="548" width="300" height="55" rx="8" fill="#fff" stroke="#555" stroke-width="1.2"/>
+  <text x="360" y="571" text-anchor="middle" font-size="14" font-weight="600" fill="#333">📈 Logits</text>
+  <text x="360" y="591" text-anchor="middle" font-size="11" fill="#777">Raw scores across entire vocabulary (100,352 tokens)</text>
+
+  <!-- Arrow -->
+  <line x1="360" y1="603" x2="360" y2="628" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 7. Softmax -->
+  <rect x="210" y="631" width="300" height="45" rx="8" fill="#fff" stroke="#555" stroke-width="1.2"/>
+  <text x="360" y="654" text-anchor="middle" font-size="14" font-weight="600" fill="#333">🎲 Softmax → Probabilities</text>
+  <text x="360" y="670" text-anchor="middle" font-size="10" fill="#777">Logits converted to probabilities that sum to 100%</text>
+
+  <!-- Arrow -->
+  <line x1="360" y1="676" x2="360" y2="701" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 8. Sampling -->
+  <rect x="210" y="704" width="300" height="55" rx="8" fill="#fff" stroke="#555" stroke-width="1.2"/>
+  <text x="360" y="727" text-anchor="middle" font-size="14" font-weight="600" fill="#333">🎯 Sampling</text>
+  <text x="360" y="747" text-anchor="middle" font-size="11" fill="#777">Temperature + Top-P → select next token</text>
+
+  <!-- Arrow -->
+  <line x1="360" y1="759" x2="360" y2="784" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 9. Output Token -->
+  <rect x="235" y="787" width="250" height="50" rx="8" fill="#fce4ec" stroke="#c62828" stroke-width="1.5"/>
+  <text x="360" y="810" text-anchor="middle" font-size="14" font-weight="600" fill="#c62828">✅ Output Token</text>
+  <text x="360" y="827" text-anchor="middle" font-size="11" fill="#a14040">"Large"</text>
+
+  <!-- Arrow down to decision -->
+  <line x1="360" y1="837" x2="360" y2="862" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 10. Stop or Continue -->
+  <!-- Diamond shape for decision -->
+  <polygon points="360,862 430,892 360,922 290,892" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
+  <text x="360" y="890" text-anchor="middle" font-size="11" font-weight="600" fill="#e65100">EOS token?</text>
+  <text x="360" y="904" text-anchor="middle" font-size="10" fill="#e65100">(end of sequence)</text>
+
+  <!-- Yes arrow — down to final output -->
+  <line x1="360" y1="922" x2="360" y2="952" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="372" y="942" font-size="11" font-weight="500" fill="#34a853">Yes</text>
+
+  <!-- Final output -->
+  <rect x="250" y="955" width="220" height="40" rx="8" fill="#e8f5e9" stroke="#34a853" stroke-width="1.5"/>
+  <text x="360" y="980" text-anchor="middle" font-size="13" font-weight="600" fill="#1e7e34">🏁 Final Response</text>
+
+  <!-- ===== AUTOREGRESSIVE LOOP ===== -->
+  <!-- No arrow — right from diamond -->
+  <line x1="430" y1="892" x2="640" y2="892" stroke="#e65100" stroke-width="2"/>
+  <text x="500" y="884" font-size="11" font-weight="500" fill="#e65100">No → feed token back</text>
+
+  <!-- Up from right side -->
+  <line x1="640" y1="892" x2="640" y2="460" stroke="#e65100" stroke-width="2"/>
+
+  <!-- Left back into transformer -->
+  <line x1="640" y1="460" x2="528" y2="460" stroke="#e65100" stroke-width="2" marker-end="url(#arrow-loop)"/>
+
+  <!-- Loop label -->
+  <text x="652" y="680" text-anchor="start" font-size="12" font-weight="600" fill="#e65100" transform="rotate(90, 652, 680)">Autoregressive Loop</text>
+
+  <!-- KV Cache label on the loop -->
+  <rect x="600" y="510" width="80" height="30" rx="5" fill="#fff3e0" stroke="#e65100" stroke-width="1"/>
+  <text x="640" y="525" text-anchor="middle" font-size="10" font-weight="500" fill="#e65100">KV Cache</text>
+  <text x="640" y="536" text-anchor="middle" font-size="9" fill="#e65100">reused</text>
+</svg>
